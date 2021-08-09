@@ -1,0 +1,55 @@
+﻿@model Core1.Models.Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>create</title>
+</head>
+<body>
+    <div style="width:80%;margin:10px auto; text-align:center;">
+        <h2>Add new student</h2>
+        <form method="post" style="width:80%;margin:10px auto;">
+            <div class="form-group">
+                @Html.LabelFor(n => n.StId)
+                @Html.TextBoxFor(n => n.StId, new { @class = "form-control" })
+                @Html.ValidationMessageFor(n => n.StId)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(n => n.StFname)
+                @Html.TextBoxFor(n => n.StFname, new { @class = "form-control" })
+                @Html.ValidationMessageFor(n => n.StFname)
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(n => n.StLname)
+                @Html.TextBoxFor(n => n.StLname, new { @class = "form-control" })
+                @Html.ValidationMessageFor(n => n.StLname)
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(n => n.StAge)
+                @Html.TextBoxFor(n => n.StAge, new { @class = "form-control" })
+                @Html.ValidationMessageFor(n => n.StAge)
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(n => n.StAddress)
+                @Html.TextBoxFor(n => n.StAddress, new { @class = "form-control" })
+                @Html.ValidationMessageFor(n => n.StAddress)
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(n => n.DeptId)
+                @Html.DropDownListFor(n => n.DeptId, (SelectList)ViewBag.dept, new { @class = "form-control" })
+                @Html.ValidationMessageFor(n => n.DeptId)
+            </div>
+            <input type="submit" value="Add" />
+        </form>
+    </div>
+</body>
+</html>

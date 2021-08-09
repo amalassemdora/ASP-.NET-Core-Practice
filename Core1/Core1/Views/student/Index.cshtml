@@ -1,0 +1,47 @@
+﻿@model List<Core1.Models.Student> 
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div style="width:80%; margin:10px auto; text-align:center;">
+        @Html.ActionLink("create", "create", null, new { @class = "btn btn-info" })
+        <table border="1" style="width:80%; margin:10px auto;">
+            <tr>
+                <th>ID</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Age</th>
+                <th>Address</th>
+                <th>Department</th>
+                <th>Operations</th>
+
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.StId</td>
+                    <td>@item.StFname</td>
+                    <td>@item.StLname</td>
+                    <td>@item.StAge</td>
+                    <td>@item.StAddress</td>
+                    <td>@item.Dept.DeptName</td>
+
+                    <td>
+                        @Html.ActionLink("Edit", "edit", new { id = item.StId }, new { @class = "btn btn-info" })
+                        @Html.ActionLink("Delete", "delete", new { id = item.StId }, new { @class = "btn btn-danger", onClick = $"return confirm('Are you sure that you want to delete {item.StFname +" " + item.StLname}?')" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>
