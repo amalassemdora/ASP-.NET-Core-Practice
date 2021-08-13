@@ -1,0 +1,30 @@
+﻿@model Post
+@{
+    ViewData["Title"] = "edit";
+}
+
+<h1>edit</h1>
+<form method="post">
+    <div>
+        <label asp-for="post_title"></label>
+        <input asp-for="post_title" class="form-control" />
+        <span asp-validation-for="post_title"></span>
+    </div>
+    <div>
+        <label asp-for="body"></label>
+        <input asp-for="body" class="form-control" />
+        <span asp-validation-for="body"></span>
+    </div>
+    <div>
+        <label asp-for="time"></label>
+        <input asp-for="time" class="form-control" />
+        <span asp-validation-for="time"></span>
+    </div>
+    <div>
+        <select asp-for="bId" asp-items="ViewBag.blog" class="form-control"> </select>
+        <input type="submit" value="Update" class="btn btn-info" />
+    </div>
+
+
+</form>
+

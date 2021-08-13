@@ -1,0 +1,36 @@
+﻿@model Post
+@{
+    ViewData["Title"] = "details";
+}
+<div style="width:80%; margin:15px auto; text-align:center">
+    <h1>Details</h1>
+    <div>
+        <table style="width:50%; margin:0px auto; text-align:center">
+            <tr>
+                <td>ID : </td>
+                <td>@Html.DisplayFor(model => model.Id)</td>
+            </tr>
+            <tr>
+                <td>Title : </td>
+                <td>@Html.DisplayFor(model => model.post_title)</td>
+            </tr>
+            <tr>
+                <td>Body : </td>
+                <td>@Html.DisplayFor(model => model.body)</td>
+            </tr>
+            <tr>
+                <td>Time : </td>
+                <td>@Html.DisplayFor(model => model.time)</td>
+            </tr>
+            <tr>
+                <td>Blog : </td>
+                <td>@Html.DisplayFor(model => model.blog.title)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a asp-action="Index" class="btn btn-secondary">Back >></a></td>
+            </tr>
+
+        </table>
+    </div>
+</div>

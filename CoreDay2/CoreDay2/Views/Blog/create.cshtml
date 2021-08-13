@@ -1,0 +1,34 @@
+﻿@model Post
+@{
+    ViewData["Title"] = "create";
+}
+
+<h1>create</h1>
+<form method="post">
+    <table>
+        <tr>
+            <td><label asp-for="post_title"></label></td>
+            <td><input type="text" asp-for="post_title" class="form-control"></td>
+            <td><span asp-validation-for="post_title"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="body"></label></td>
+            <td><input type="text" asp-for="body" class="form-control"></td>
+            <td><span asp-validation-for="body"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="time"></label></td>
+            <td><input type="text" asp-for="time" class="form-control"></td>
+            <td><span asp-validation-for="time"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="bId"></label></td>
+            <td><select asp-for="bId" asp-items="ViewBag.Blog"></select></td>
+            <td><span asp-validation-for="bId"></span></td>
+        </tr>
+        <tr>
+            <td><input type="submit" class="btn-info" value="Add" /></td>
+        </tr>
+    </table>
+</form>
+
